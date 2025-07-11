@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<IProductsQuery, ProductsQuery>();
 
+builder.Services.AddSingleton<VendingMachineDB>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
