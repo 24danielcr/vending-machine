@@ -48,10 +48,10 @@ namespace backend.Database
       var pepsiName = FormatProductName(Product.Pepsi);
       InsertProduct(Product.Pepsi, pepsiName, 750, 8);
 
-      var spriteName = FormatProductName(Product.CocaCola);
+      var spriteName = FormatProductName(Product.Sprite);
       InsertProduct(Product.Sprite, spriteName, 975, 15);
 
-      var fantaName = FormatProductName(Product.CocaCola);
+      var fantaName = FormatProductName(Product.Fanta);
       InsertProduct(Product.Fanta, fantaName, 950, 10);
     }
 
