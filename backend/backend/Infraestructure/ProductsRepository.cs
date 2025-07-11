@@ -11,10 +11,17 @@ namespace backend.Infraestructure
       this.vendingMachineDB = vendingMachineDB;
     }
 
-
     public Dictionary<Product, VendingMachineProductModel> GetAllProducts()
     {
-      return this.vendingMachineDB.vendingMachineProducts;
+      try
+      {
+        return this.vendingMachineDB.vendingMachineProducts;
+      }
+      catch (Exception ex)
+      {
+        throw new Exception(
+          "Error in repository layer: GetAllProducts.", ex);
+      }
     }
   }
 }

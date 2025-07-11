@@ -16,14 +16,20 @@ namespace backend.Application
     {
       List<VendingMachineProductModel> products =
         new List<VendingMachineProductModel>();
-
-      var productsQuery = productsRepository.GetAllProducts();
-
-      foreach (var product in productsQuery)
+      try
       {
-        products.Add(product.Value);
-      }
+        var productsQuery = productsRepository.GetAllProducts();
 
+        foreach (var product in productsQuery)
+        {
+          products.Add(product.Value);
+        }
+      }
+      catch (Exception ex)
+      {
+        throw new Exception(
+          "Error in application layer: GetAllProducts.", ex);
+      }
       return products;
     }
   }

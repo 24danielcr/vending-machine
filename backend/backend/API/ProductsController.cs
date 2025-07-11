@@ -17,7 +17,14 @@ namespace backend.API
     [HttpGet]
     public IActionResult GetAllProducts()
     {
-      return Ok(productsQuery.GetAllProducts());
+      try
+      {
+        return Ok(productsQuery.GetAllProducts());
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(500, "Could not get all products at this time.");
+      }
     }
   }
 
