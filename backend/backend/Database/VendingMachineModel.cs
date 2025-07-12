@@ -22,7 +22,7 @@ namespace backend.Database
   public class VendingMachineProductModel
   {
     [Required] public string Name { get; set; } = string.Empty;
-    [Required] public double Price { get; set; }
+    [Required] public int Price { get; set; }
     [Required] public int Quantity { get; set; }
   }
 
