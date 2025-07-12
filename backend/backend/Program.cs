@@ -11,8 +11,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<IProductsQuery, ProductsQuery>();
+
+builder.Services.AddScoped<ICoinsQuery, CoinsQuery>();
+
+builder.Services.AddScoped<IPaymentOrchestrator, PaymentOrchestrator>();
+
+builder.Services.AddScoped<IProductPaymentCommand, ProductPaymentCommand>();
+
+builder.Services.AddScoped<ICoinPaymentCommand, CoinPaymentCommand>();
+
+builder.Services.AddScoped<ICoinsRepository, CoinsRepository>();
+
+builder.Services.AddScoped<ICoinPaymentRepository, CoinPaymentRepository>();
+
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
+
+builder.Services.AddScoped<IPaymentOrchestratorRepository
+  , PaymentOrchestratorRepository>();
+
+builder.Services.AddScoped<IProductPaymentRepository
+  , ProductPaymentRepository>();
+
+builder.Services.AddScoped<IProductPaymentRepository
+  , ProductPaymentRepository>();
 
 builder.Services.AddSingleton<VendingMachineDB>();
 
