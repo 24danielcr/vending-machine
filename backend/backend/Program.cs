@@ -11,11 +11,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ICoinsQuery, CoinsQuery>();
+
 builder.Services.AddScoped<IPaymentOrchestrator, PaymentOrchestrator>();
 
 builder.Services.AddScoped<IProductPaymentCommand, ProductPaymentCommand>();
 
 builder.Services.AddScoped<ICoinPaymentCommand, CoinPaymentCommand>();
+
+builder.Services.AddScoped<ICoinsRepository, CoinsRepository>();
 
 builder.Services.AddScoped<ICoinPaymentRepository, CoinPaymentRepository>();
 
