@@ -23,7 +23,7 @@ namespace backend.Database
       InsertCoins();
     }
 
-    private void InsertProduct(Product product, string name, double price
+    private void InsertProduct(Product product, string name, int price
       , int quantity)
     {
       vendingMachineProducts[product] = new VendingMachineProductModel
