@@ -216,8 +216,6 @@ export default {
         return;
       }
 
-      console.log('Purchasing:', orderProducts, orderPayment);
-
       try {
         const response = await axios.post('https://localhost:7254/api/Payment', {
           coinsPayment: orderPayment,
